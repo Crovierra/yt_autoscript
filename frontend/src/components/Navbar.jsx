@@ -7,12 +7,12 @@ const Navbar = () => {
   const {darkTheme, changeTheme, currentUser, logout} = useUser()
 
   return (
-    <div className="flex flex-row justify-between items-center w-screen h-[80px] px-[10%] drop-shadow-xs">
+    <div className="flex flex-row justify-between items-center w-screen h-[80px] px-[10%] drop-shadow-xs max-md:px-[5%]">
     <div className="flex flex-row gap-2">
       <BsFillBadgeCcFill className="text-blue-400 w-[40px] h-[40px]"/>
-      <h1 className="font-bold text-3xl text-blue-400">YT Autoscript</h1>
+      <h1 className="font-bold text-3xl text-blue-400"><a href="/">YT Autoscript</a></h1>
     </div>
-      <ul className="flex flex-row justify-evenly items-center gap-5">
+      <ul className="flex flex-row justify-evenly items-center gap-5 max-sm:hidden max-md:gap-3">
         <li><a href="/">Home</a></li>
         <li><a href="/instruction">How it works</a></li>
         <li><a href="/about_us">About</a></li>

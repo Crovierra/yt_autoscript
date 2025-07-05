@@ -2,9 +2,9 @@ import React from 'react'
 
 const Instruction = () => {
   return (
-    <div className="flex flex-col gap-2 justify-center w-[1000px] h-[700px] outline-[1px] outline-gray-200 m-auto px-[2%] mt-[3%] rounded-lg shadow-md">
+    <div className="flex flex-col gap-2 justify-center w-[1000px] h-auto py-[2%] max-sm:py-[5%] max-lg:w-[80%] outline-[1px] outline-gray-200 m-auto px-[2%] max-md:px-[5%] my-[3%] rounded-lg shadow-md">
         <h3 className="text-lg font-bold">How <span className="text-blue-400 font-bold">YT Autoscript</span> Works</h3>
-        <p className="w-[800px]">
+        <p className="w-[100%]">
             Using our website to get accurate transcriptions of YouTube videos is simple, fast, and user-friendly.
              Below, we'll walk you through the steps on how you can use our platform to generate transcripts from your favorite YouTube videos.
         </p>

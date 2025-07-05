@@ -3,10 +3,10 @@ import React from 'react'
 const AboutUs = () => {
   return (
     <>
-    <div className="flex items-center justify-center mt-[3%] mb-[1%]">
+    <div className="flex items-center justify-center mt-[3%] mb-[1%] max-md:mb-[5%]">
         <p className="font-bold text-blue-400 text-4xl">About Us</p>
     </div>
-    <div className="p-[2%] flex flex-col gap-2 w-[1000px] h-[600px] rounded-xl justify-center m-auto shadow-md outline-gray-200 outline-[1px]">
+    <div className="p-[5%]  flex flex-col gap-2 max-lg:w-[80%] w-[60%] h-auto rounded-xl justify-center m-auto shadow-md outline-gray-200 outline-[1px]">
         <h3 className="font-bold text-blue-400">Welcome to YT Autoscript</h3>
         <p>
             At <span className=" font-bold">YT Autoscript</span>, we are passionate about making YouTube content more accessible and easier to understand.
