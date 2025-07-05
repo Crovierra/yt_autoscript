@@ -1,0 +1,25 @@
+import React from 'react'
+import { IoCheckmarkCircleSharp } from "react-icons/io5";
+
+const SubsCard = ({price}) => {
+    
+  return (
+    <div className="flex flex-col w-[350px] h-[400px] rounded-lg outline-1 outline-neutral-300 items-center transition-all transform duration-600 ease-in-out hover:translate-y-[-15px]">
+        <div className="flex bg-blue-400 w-[350px] h-[100px] items-center justify-center transition-all ease-in-out duration-300 hover:bg-neutral-700 hover:text-white rounded-t-lg">
+        <p><span className="text-3xl font-semibold">{price}$</span> / Month</p>
+        </div>
+        <div className="flex flex-col pt-[5%]">
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className="text-blue-400"/>Transcript up to <span className="font-bold">{price === "5" ? "10 videos" : 12 > price < 5 ? "25 videos" : "60 videos"} / Month</span></p>
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className="text-blue-400"/>Up to <span className="font-bold">{price === "5" ? "15 minutes" : 12 > price < 5 ? "25 minutes" : "60 minutes"} per video</span></p>
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className="text-blue-400"/>Download transcript as {price === "5" ? "plain text" : "TXT, PDF, DOCX"}</p>
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className="text-blue-400"/>{price === "5" ? "Basic" : 12 > price < 5 ? "Priority" : "Dedicated"} Support</p>
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className={price < 12 ? "text-gray-400" : "text-blue-400"}/>Higher processing speed</p>
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className={price < 13 ? "text-gray-400" : "text-blue-400"}/>Integration with <span className="font-bold">AI tools</span></p>
+        <p className="text-md flex flex-row items-center gap-2"><IoCheckmarkCircleSharp className={price < 13 ? "text-gray-400" : "text-blue-400"}/>Support more than <span className="font-bold">10+ languages</span></p>
+        </div>
+        <button className="bg-blue-400 rounded-md px-[12px] py-[2px] mt-[15%] cursor-pointer text-white hover:bg-neutral-700 duration-400">Subscribe</button>
+    </div>
+  )
+}
+
+export default SubsCard
