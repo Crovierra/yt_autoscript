@@ -5,6 +5,7 @@ import authRoutes from "./routes/authRoutes.js";
 import memberRoutes from "./routes/memberRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
 import transcriptRoutes from "./routes/transcriptRoutes.js"
+import paymentRoutes from "./routes/paymentRoute.js"
 import { connectDB } from "./config/db.js";
 import cookieParser from "cookie-parser"
 import "./cron/membershipCron.js"
@@ -30,5 +31,6 @@ app.use("/api/auth/login", loginLimiter)
 app.use("/api/member", memberRoutes)
 app.use("/api/user", userRoutes)
 app.use("/api/link", transcriptRoutes)
+app.use("/api/stripe/", paymentRoutes)
 
 app.listen(PORT, ()=> console.log("Server is running"))

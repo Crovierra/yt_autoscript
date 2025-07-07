@@ -4,13 +4,14 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY)
 
 const createPaymentIntent = async (req, res) => {
     try {
+        const {subsPrice} = req.body
         const product = await stripe.products.create({
             name: "YTA Subscription",
-            description: "5$ / Month Subscription"
+            description: `${subsPrice} / Month Subscription`
         })
 
         const price = await stripe.prices.create({
-            unit_amount: 1200,
+            unit_amount: {subsPrice},
             currency: "usd",
             recurring: {
                 interval: "month"

@@ -35,8 +35,8 @@ const userSchema = new mongoose.Schema({
         type: Date
     },
     preferredTheme : {
-        type: Boolean,
-        default: false
+        type: String,
+        default: "light"
     }
 })
 

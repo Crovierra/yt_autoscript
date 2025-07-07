@@ -6,6 +6,8 @@ import AboutUs from './pages/AboutUs'
 import Instruction from './pages/Instruction'
 import Login from './pages/Login.jsx'
 import Register from "./pages/Register.jsx"
+import NotFound from './pages/NotFound'
+import Subscription from './pages/Subscription'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/instruction" element={<Instruction />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/subscription" element={<Subscription />} />
       </Routes>
     </Router>
     </>

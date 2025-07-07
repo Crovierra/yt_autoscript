@@ -15,7 +15,6 @@ export const login = async (req, res) => {
         if(!checkPassword) return res.status(401).json({message: "Wrong password"})
         const {password: pwd, ...safeUser} = checkUser.toObject()
         const token = jwt.sign({id: safeUser._id, email: safeUser.email}, process.env.SECRET_TOKEN, {expiresIn: '1h'})
-
         const refreshToken = crypto.randomBytes(64).toString("hex")
         checkUser.refreshToken = refreshToken
         await checkUser.save()
