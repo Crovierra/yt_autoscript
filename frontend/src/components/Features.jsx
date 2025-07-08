@@ -78,7 +78,7 @@ const Features = () => {
               icon={card.icon}
               feature={card.feature}
               description={card.description}
-              className="w-[400px] h-[180px]"
+              className="w-[400px] h-[180px] max-xl:w-[300px]"
             />
           ))}
         </div>

@@ -6,7 +6,7 @@ import { useCurrentTheme } from "../context/themeContext.jsx";
 import { useTheme } from "../hooks/useTheme.js";
 
 const Navbar = () => {
-  const { currentUser, logout} = useUser()
+  const { currentUser, logout, userTranscript} = useUser()
   const { currentTheme } = useCurrentTheme()
   const { updateTheme } = useTheme()
 
@@ -18,7 +18,7 @@ const Navbar = () => {
     </div>
       <ul className={`flex flex-row justify-evenly items-center gap-5 max-sm:hidden max-md:gap-3 ${currentTheme === "dark" ? "text-white" : ""}`}>
         <li><a href="/">Home</a></li>
-        <li><a href="/instruction">How it works</a></li>
+        <li>{currentUser && userTranscript ? <a href="/transcript_success">Transcript</a> : <a href="/instruction">How it works</a>}</li>
         <li><a href="/about_us">About</a></li>
         {currentUser ? (
           <>

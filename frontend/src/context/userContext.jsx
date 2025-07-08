@@ -13,6 +13,11 @@ export const UserProvider = ({children}) => {
             return name && token ? name : null
         }
     })
+    const [userTranscript, setUserTranscript ] = useState(() => {
+        const transcript = JSON.parse(sessionStorage.getItem("transcript"))
+        return transcript ? transcript : null
+    }
+)
 
     const changeTheme = async () =>{
         setDarkTheme(prevValue => !prevValue)
@@ -33,7 +38,7 @@ export const UserProvider = ({children}) => {
     }
 
     return (
-        <UserContext.Provider value={{changeTheme, darkTheme, getUserData, currentUser, logout, login}}>
+        <UserContext.Provider value={{changeTheme, darkTheme, getUserData, currentUser, logout, login, userTranscript}}>
             {children}
         </UserContext.Provider>
     )

@@ -9,6 +9,7 @@ import nodemailer from "nodemailer"
 export const login = async (req, res) => {
     try {
         const {email, password} = req.body
+        if(!email || !password) return res.status(400).json({message: "Cannot leave the field empty"})
         const checkUser = await User.findOne({email})
         if(!checkUser) return res.status(404).json({message: "User not found"})
         const checkPassword = await bcrypt.compare(password, checkUser.password)

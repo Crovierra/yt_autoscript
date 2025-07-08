@@ -1,11 +1,13 @@
 import { useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import { useUser } from '../context/userContext.jsx'
+import { useCurrentTheme } from '../context/themeContext.jsx'
 
 const TranscriptSuccess = () => {
     const { userTranscript } = useUser()
+    const { currentTheme } = useCurrentTheme()
     const navigate = useNavigate()
-
+    
     useEffect(()=> {
         if(!userTranscript) {
             navigate("/")
@@ -14,18 +16,21 @@ const TranscriptSuccess = () => {
     }, [userTranscript])
 
   return (
-    <div className='flex flex-col w-auto h-auto px-[5%] py-[5%] items-center gap-2'>
-            {userTranscript?.transcript.transcripts?.map((item, index) => {
-                return (
-                <div className='flex flex-col outline-1 outline-blue-400 text-black w-[1000px] h-auto rounded-lg p-[1%]'>
-                    <div className='flex flex-row gap-4' key={index}>
-                        <p><span className='font-semibold'>Start</span> : {item.start}</p>
-                        <p><span className='font-semibold'>Duration</span> : {item.duration}</p>
-                    </div>
-                    <p className='font-semibold'>{item.text}</p>
+    <div className={`flex flex-col w-auto h-[calc(100vh-64px)] px-[5%] py-[5%] items-center gap-2 overflow-y-auto mt-[64px] ${currentTheme === "dark" ? "bg-neutral-700" : ""}`}>
+        {userTranscript?.transcript?.transcripts?.map((item, index) => {
+            return (
+            <div
+                key={index}
+                className={`flex flex-col outline outline-1 outline-blue-400 text-black w-[1000px] h-auto rounded-lg p-[1%] ${currentTheme === "dark" ? "text-white bg-neutral-900 outline-white" : ""}`}
+            >
+                <div className='flex flex-row gap-4'>
+                <p><span className={`font-semibold ${currentTheme === "dark" ? "text-sky-300" : ""}`}>Start</span> : {item.start}</p>
+                <p><span className={`font-semibold ${currentTheme === "dark" ? "text-sky-300" : ""}`}>Duration</span> : {item.duration}</p>
                 </div>
-                )
-            })}
+                <p className='font-semibold'>{item.text}</p>
+            </div>
+            );
+        })}
     </div>
   )
 }

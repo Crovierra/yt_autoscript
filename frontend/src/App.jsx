@@ -8,6 +8,7 @@ import Login from './pages/Login.jsx'
 import Register from "./pages/Register.jsx"
 import NotFound from './pages/NotFound'
 import Subscription from './pages/Subscription'
+import TranscriptSuccess from "./pages/TranscriptSuccess"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/subscription" element={<Subscription />} />
+        <Route path="/transcript_success" element={<TranscriptSuccess />} />
       </Routes>
     </Router>
     </>

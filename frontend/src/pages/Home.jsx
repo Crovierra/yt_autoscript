@@ -5,9 +5,11 @@ import { FaCircleCheck } from "react-icons/fa6";
 import { FaPencilAlt } from "react-icons/fa";
 import Features from '../components/Features';
 import { useCurrentTheme } from '../context/themeContext.jsx';
+import { useTranscript } from '../hooks/useTranscript';
 
 const Home = () => {
   const { currentTheme } = useCurrentTheme()
+  const { submitLink, handleLink, loading, transcriptError } = useTranscript()
   const prime = [
     {description: "Lightning Fast", image: <BsFillLightningChargeFill />},
     {description: "100% Accurate", image: <FaCircleCheck />},
@@ -33,9 +35,16 @@ const Home = () => {
           )}
             
       </div>
-        <div className={`flex flex-row max-sm:flex-col rounded-2xl w-[800px] py-[2%] max-sm:py-[4%] h-auto max-md:w-[600px] max-sm:w-[400px] max-lg:w-[700px] justify-center items-center shadow-md gap-4 ${currentTheme === "dark" ? "bg-neutral-900" : ""}`}>
-            <input placeholder="Paste Youtube Video URL here" className={`bg-gray-100 w-[400px] max-sm:w-[350px] outline px-[10px] h-[40px] rounded-md outline-gray-300 active:outline-blue-400 ${currentTheme === "dark" ? "bg-white text-black" : ""}`}></input>
-            <button className="bg-blue-400 rounded-md w-[150px] h-[40px] text-white shadow-md cursor-pointer hover:scale-105 hover:shadow-lg hover:translate-y-[-2px] transition-all ease-in-out transform duration-300">Convert to Text</button>
+        <div className={`flex flex-col max-sm:flex-col rounded-2xl w-[800px] py-[2%] max-sm:py-[4%] h-auto max-md:w-[600px] gap-2 max-sm:w-[400px] max-lg:w-[700px] justify-center items-center shadow-md ${currentTheme === "dark" ? "bg-neutral-900" : ""}`}>
+          <div className="flex flex-row gap-4">
+            <input placeholder="Paste Youtube Video URL here" className={`bg-gray-100 w-[400px] max-sm:w-[350px] outline px-[10px] h-[40px] rounded-md outline-gray-300 active:outline-blue-400 ${currentTheme === "dark" ? "bg-white text-black" : ""}`} onChange={handleLink}></input>
+            <button 
+              className="bg-blue-400 rounded-md w-[150px] h-[40px] text-white shadow-md cursor-pointer hover:scale-105 hover:shadow-lg hover:translate-y-[-2px] transition-all ease-in-out transform duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+              disabled={loading} onClick={submitLink}>
+              {loading ? "Loading" : "Convert to Text"}
+            </button>
+          </div>
+          {transcriptError ? <p className="text-red-500">{transcriptError}</p> : null }
         </div>
         <Features/>
     </div>

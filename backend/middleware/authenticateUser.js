@@ -7,7 +7,7 @@ const verifyToken = async(req, res, next) => {
     if(!token) return res.status(401).json({message: "Access Denied"})
     try {
         const isBlacklisted = await blacklistToken.findOne({token})
-        if(isBlacklisted) return res.status(403).json({message: "Token has been revoked"})
+        if(isBlacklisted) return res.status(403).json({message: "Please login to access this feature"})
         const verified = jwt.verify(token, process.env.SECRET_TOKEN)
         req.user = verified
         next();

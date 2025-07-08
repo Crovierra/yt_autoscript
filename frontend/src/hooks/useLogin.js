@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useUser } from "../context/userContext.jsx"
 
@@ -6,11 +6,14 @@ import { useUser } from "../context/userContext.jsx"
 export const useLogin = () =>{
     const navigate = useNavigate()
     const { getUserData, login } = useUser()
+    const [loginError, setLoginError] = useState()
+    const [loading, setLoading] = useState()
     const passwordRef = useRef()
     const emailRef = useRef()
     async function handleSubmit(e) {
         e.preventDefault()
         try {
+            setLoading(true)
             const user = {email : emailRef.current.value || "", 
                         password : passwordRef.current.value || "" }
             const response = await fetch("http://localhost:3000/api/auth/login", {
@@ -34,9 +37,14 @@ export const useLogin = () =>{
             navigate("/")
 
         } catch (error) {
+            setLoginError(error.message)
             throw new Error(error.message)
+        } finally {
+            setTimeout(() => {
+                setLoading(false)
+            },2000)
         }
     }
 
-    return {emailRef, passwordRef, handleSubmit}
+    return {emailRef, passwordRef, handleSubmit, loginError, loading}
 }

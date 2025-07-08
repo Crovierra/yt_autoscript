@@ -5,6 +5,6 @@ import { TranscriptLimiter } from "../middleware/rateLimiting.js"
 
 const router = express.Router()
 
-router.get("/get_transcript", TranscriptLimiter, verifyToken, fetchTranscript)
+router.post("/get_transcript", TranscriptLimiter, verifyToken, fetchTranscript)
 
 export default router
