@@ -23,6 +23,7 @@ export function useTranscript(){
                         "Content-type" : "application/json",
                         "Authorization" : `Bearer ${token}`
                     },
+                    credentials: "include",
                     body: JSON.stringify({transcriptLink: link})
                 }
             )

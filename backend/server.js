@@ -17,10 +17,11 @@ const PORT = process.env.PORT;
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "*",
-    methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-}))
+  origin: process.env.FRONTEND_URL,
+  methods: ["GET", "POST", "DELETE", "PATCH", "PUT"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true // important if using sessions, tokens, etc.
+}));
 app.use(cookieParser())
 
 connectDB();

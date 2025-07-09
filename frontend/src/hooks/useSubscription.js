@@ -7,6 +7,7 @@ export const useSubscription = () => {
                 headers: {"Content-Type" : "application/json",
                     "Authorization" : `Bearer ${token}`
                 },
+                credentials: "include",
                 body: JSON.stringify(subsPrice)
             })
             const data = await response.json()

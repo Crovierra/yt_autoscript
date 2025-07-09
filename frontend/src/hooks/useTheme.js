@@ -18,6 +18,7 @@ export const useTheme = () => {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`,
                 },
+                credentials: "include",
                 body: JSON.stringify({ currentTheme }),  // Send theme as JSON object
             })
 
