@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom"
 export function useTranscript(){
     const navigate = useNavigate()
     const [link, setLink] = useState("")
-    const [transcriptData, getTranscriptData] = useState(null)
     const [loading, setLoading] = useState(false)
     const [transcriptError, setError] = useState("")
 
@@ -17,7 +16,7 @@ export function useTranscript(){
         try {
             setLoading(true)
             const token = sessionStorage.getItem("token")
-            const response = await fetch("http://localhost:3000/api/link/get_transcript",
+            const response = await fetch(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/api/link/get_transcript`,
                 {
                     method: "POST",
                     headers: {

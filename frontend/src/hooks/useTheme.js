@@ -12,7 +12,7 @@ export const useTheme = () => {
             
             // Ensure theme is updated in sessionStorage
             
-            const response = await fetch("http://localhost:3000/api/auth/theme", {
+            const response = await fetch(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/api/auth/theme`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

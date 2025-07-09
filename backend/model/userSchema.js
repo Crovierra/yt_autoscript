@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     },
     credit: {
         type: Number,
-        default: 100
+        default: 50
     },
     resetToken: {
         type: String

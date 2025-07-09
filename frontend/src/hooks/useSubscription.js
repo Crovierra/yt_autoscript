@@ -2,7 +2,7 @@ export const useSubscription = () => {
     async function paymentIntent(subsPrice) {
         const token = sessionStorage.getItem("token")
         try {
-            const response = await fetch("http:localhost:3000/api/stripe/create_subscription",{
+            const response = await fetch(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/api/stripe/create_subscription`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json",
                     "Authorization" : `Bearer ${token}`

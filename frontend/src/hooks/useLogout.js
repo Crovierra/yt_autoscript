@@ -2,7 +2,7 @@ export const useLogout = () => {
     async function handleLogout(){
     try {
         const token = sessionStorage.getItem("token")
-        const response = await fetch("http://localhost:3000/api/auth/logout", {
+        const response = await fetch(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/api/auth/logout`, {
             method: "POST",
             headers: {
                 "Content-Type" : "Application/json",

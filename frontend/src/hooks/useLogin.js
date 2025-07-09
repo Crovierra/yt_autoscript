@@ -16,7 +16,7 @@ export const useLogin = () =>{
             setLoading(true)
             const user = {email : emailRef.current.value || "", 
                         password : passwordRef.current.value || "" }
-            const response = await fetch("http://localhost:3000/api/auth/login", {
+            const response = await fetch(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/api/auth/login`, {
                 method: "POST",
                 headers : {"Content-type" : "application/json"},
                 body: JSON.stringify(user)
