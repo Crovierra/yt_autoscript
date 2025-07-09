@@ -19,6 +19,7 @@ export const useLogin = () =>{
             const response = await fetch(`${import.meta.env.VITE_REACT_BACKEND_BASEURL}/api/auth/login`, {
                 method: "POST",
                 headers : {"Content-type" : "application/json"},
+                credentials: "include",
                 body: JSON.stringify(user)
             })
 
