@@ -4,7 +4,7 @@ import { useCurrentTheme } from '../context/themeContext'
 const AboutUs = () => {
     const { currentTheme } = useCurrentTheme()
   return (
-    <div className={`w-screen h-auto flex flex-col items-center mb-[20px] ${currentTheme === "dark" ? "bg-neutral-700" : ""} duration-300`}>
+    <div className={`min-h-screen flex flex-col items-center pt-[20px] pb-[40px] ${currentTheme === "dark" ? "bg-neutral-700" : ""} duration-300`}>
     <div className="flex items-center justify-center max-md:mb-[5%] pt-[90px]  pb-[1%]">
         <p className={`font-bold ${currentTheme === "dark" ? "text-sky-300" : "text-blue-400"} text-4xl`}>About Us</p>
     </div>

@@ -59,9 +59,9 @@ const Navbar = () => {
       </a>
       <a href="/about_us" className={`${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400"}`}>About</a>
       {currentUser ? (
-        <button className={`cursor-pointer ${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400"}`} onClick={logout}>Logout</button>
+        <button className={`cursor-pointer ${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400 "} pb-[5px]`} onClick={logout}>Logout</button>
       ) : (
-        <a href="/login" className={`${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400"}`}>Login</a>
+        <a href="/login" className={`${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400"} pb-[5px]`}>Login</a>
       )}
     </nav>
   </div>

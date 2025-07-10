@@ -17,7 +17,7 @@ const Home = () => {
   ]
   return (
     <div className={`flex flex-col justify-center items-center min-h-screen overflow-y-auto pt-[100px] max-sm:pt-[90px] max-sm:scale-0.7 ${currentTheme === "dark" ? "bg-neutral-700 text-white" : ""} duration-300`}>
-      <div className="flex flex-row items-center gap-3 ml-[-10px] px-[2%] max-sm:text-center">
+      <div className="flex flex-row items-center gap-3 ml-[-10px] px-[2%] mt-[20px] max-sm:text-center">
       <FaPencilAlt className="text-2xl text-blue-400 max-sm:hidden"/>
       <h2 className={`text-4xl ${currentTheme === "dark" ? "text-sky-300" : "text-blue-400"} font-bold`}>YouTube Video to Text Converter</h2>   
       </div>
