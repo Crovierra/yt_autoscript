@@ -29,7 +29,7 @@ const Instruction = () => {
             <li>If you need a translation or subtitles, we offer services to make your content more versatile.</li>
         </ul>
         <div className="flex flex-col items-end">
-        <button className="bg-blue-400 text-white w-[100px] h-[30px] rounded-lg mt-[20px] transform ease-in-out duration-300 hover:translate-y-[-4px] hover:shadow-lg cursor-pointer">Try it now</button>
+        <button className="bg-blue-400 text-white w-[100px] h-[30px] rounded-lg mt-[20px] transform ease-in-out duration-300 hover:translate-y-[-4px] hover:shadow-lg cursor-pointer"><a href="/login">Try it now</a></button>
         </div>
     </div>
     </div>
