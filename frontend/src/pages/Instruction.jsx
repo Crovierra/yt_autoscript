@@ -4,7 +4,7 @@ import { useCurrentTheme } from '../context/themeContext'
 const Instruction = () => {
   const {currentTheme} = useCurrentTheme()
   return (
-  <div className={`w-screen h-screen pt-[5%] ${currentTheme === "dark" ? "bg-neutral-700" : "bg-white"} duration-300`}>
+  <div className={`w-screen h-auto pt-[90px] mb-[20px] ${currentTheme === "dark" ? "bg-neutral-700" : "bg-white"} duration-300`}>
     <div className={`flex flex-col gap-2 justify-center w-[1000px] h-auto py-[2%] max-sm:py-[5%] max-lg:w-[80%] outline-[1px] outline-gray-200 m-auto px-[2%] max-md:px-[5%] my-[3%] rounded-lg shadow-md ${currentTheme === "dark" ? "bg-neutral-900 text-white" : ""} duration-300`}>
         <h3 className="text-lg font-bold">How <span className={`${currentTheme === "dark" ? "text-sky-300" : "text-blue-400"} font-bold`}>YT Autoscript</span> Works</h3>
         <p className="w-[100%]">

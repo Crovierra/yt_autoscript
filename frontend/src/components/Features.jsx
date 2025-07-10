@@ -54,9 +54,9 @@ const Features = () => {
   ]
   return (
     <div className="w-full overflow-hidden px-4">
-      <div className="flex flex-col justify-center items-center my-[4%] gap-4 keen-slider">
+      <div className="flex flex-col justify-center items-center overflow-hidden py-[2%] gap-4 keen-slider">
         <h3 className="font-bold text-2xl">Why Choose YT Autoscript ?</h3>
-        <p className='max-sm:w-[400px] max-md:w-[600px] h-auto'>Experience the most reliable YouTube transcript generator with advanced features designed for your needs.</p>
+        <p className='max-sm:max-w-[350px] max-md:w-[600px] h-auto text-center px-[10px]'>Experience the most reliable YouTube transcript generator with advanced features designed for your needs.</p>
       {isMobile ? (
         <div ref={sliderRef} className="keen-slider">
           {cards.map((card, idx) => (
