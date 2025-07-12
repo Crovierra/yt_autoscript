@@ -13,6 +13,10 @@ export const UserProvider = ({children}) => {
             return name && token ? name : null
         }
     })
+    const [isPayment, setIsPayment] = useState(()=>{
+        const payment = sessionStorage.getItem("payment")
+        return payment ? payment : false
+    })
     const [userTranscript, setUserTranscript ] = useState(() => {
         const transcript = JSON.parse(sessionStorage.getItem("transcript"))
         return transcript ? transcript : null
@@ -38,7 +42,7 @@ export const UserProvider = ({children}) => {
     }
 
     return (
-        <UserContext.Provider value={{changeTheme, darkTheme, getUserData, currentUser, logout, login, userTranscript}}>
+        <UserContext.Provider value={{changeTheme, darkTheme, getUserData, currentUser, logout, login, userTranscript, isPayment, setIsPayment}}>
             {children}
         </UserContext.Provider>
     )

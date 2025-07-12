@@ -9,6 +9,9 @@ import Register from "./pages/Register.jsx"
 import NotFound from './pages/NotFound'
 import Subscription from './pages/Subscription'
 import TranscriptSuccess from "./pages/TranscriptSuccess"
+import PaymentSuccess from './pages/PaymentSuccess'
+import PaymentCancel from './pages/PaymentCancel'
+
 
 function App() {
   return (
@@ -24,6 +27,8 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/subscription" element={<Subscription />} />
         <Route path="/transcript_success" element={<TranscriptSuccess />} />
+        <Route path="/success" element={<PaymentSuccess />} />
+        <Route path="/cancel" element={<PaymentCancel />} />
       </Routes>
     </Router>
     </>
