@@ -58,7 +58,7 @@ export const fetchTranscript = async(req, res) => {
         //Reduce creditAmount after successfully get transcript
         await User.findOneAndUpdate({email: user.email}, {$inc: {credit: -1}})
         
-        return res.status(200).json({message: "Fetch transcript success", transcript, checkAPI })
+        return res.status(200).json({message: "Fetch transcript success", transcript })
     } catch (error) {
         return res.status(500).json({message: `Failed to fetch transcript, error : ${error.message}`})
     }

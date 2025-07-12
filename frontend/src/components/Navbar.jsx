@@ -73,6 +73,7 @@ const Navbar = () => {
         {currentUser && userTranscript ? "Transcript" : "How it works"}
       </a>
       <a href="/about_us" className={`${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400"}`}>About</a>
+      {currentUser ? (<a href="/subscription" className={`${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400"}`}>Subscription</a>) : null}
       {currentUser ? (
         <button className={`cursor-pointer ${currentTheme === "dark" ? "hover:text-sky-300" : "hover:text-blue-400 "} pb-[5px]`} onClick={logout}>Logout</button>
       ) : (
