@@ -52,7 +52,8 @@ export const fetchTranscript = async(req, res) => {
         
         if(!videoId) return res.status(409).json({message: "Cannot get transcript from this source"})
         
-        const response = await fetch(`https://www.searchapi.io/api/v1/search?api_key=${process.env.TRANSCRIPT_API_KEY}&engine=youtube_transcripts&video_id=${videoId}`)
+        const response = await fetch(`https://www.searchapi.io/api/v1/search?api_key="8MoS7UstHe8H2qE5mT5Db5Ly"&engine=youtube_transcripts&video_id=${videoId}`)
+        console.log("Api Key from backend :", process.env.TRANSCRIPT_API_KEY)
         const transcript = await response.json()
 
         //Reduce creditAmount after successfully get transcript
