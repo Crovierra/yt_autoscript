@@ -6,8 +6,8 @@ const Login = () => {
   const {passwordRef, emailRef, handleSubmit, loginError, loading} = useLogin();
   const { currentTheme } = useCurrentTheme()
   return (
-    <div className={`flex flex-col justify-center items-center w-screen  h-screen ${currentTheme === "dark" ? "bg-neutral-700 text-white" : ""} duration-300`}>
-    <form action="POST" className="flex flex-col gap-2 items-center w-screen h-screen px-[20%] justify-center overflow-h-auto]" onSubmit={handleSubmit}>
+    <div className={`flex flex-col justify-center items-center ${currentTheme === "dark" ? "bg-neutral-700 text-white" : ""} duration-300`}>
+    <form action="POST" className="flex flex-col gap-2 items-center min-h-screen px-[20%] py-[100px] justify-center overflow-h-auto" onSubmit={handleSubmit}>
       <CustomInput forLabel="email" label="Email" type="email" id="email" placeholder="example@mail.com" theme={currentTheme === "dark" ? "bg-neutral-900" : ""}  ref={emailRef}/>
       <CustomInput forLabel="password" label="Password" type="password" id="password" placeholder="Enter your password" theme={currentTheme === "dark" ? "bg-neutral-900" : ""} ref={passwordRef}/>
       <p className="text-center">Don't have an account ? <a className={`${currentTheme === "dark" ? "text-sky-300" : "text-blue-400"} font-semibold`}  href="/register">Register</a> now</p>

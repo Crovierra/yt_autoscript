@@ -40,6 +40,8 @@ const Navbar = () => {
     <li><a href="/about_us">About</a></li>
     {currentUser ? (
       <>
+
+        <li><a href="/subscription">Subscription</a></li>
         <li><button className='cursor-pointer' onClick={logout}>Logout</button></li>
       </>
     ) : (
