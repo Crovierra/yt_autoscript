@@ -21,7 +21,7 @@ const SubsCard = ({price}) => {
         <p className={defaultPClass}><IoCheckmarkCircleSharp className={price < 13 ? "text-gray-400" : "text-blue-400"}/>Integration with <span className="font-bold">AI tools</span></p>
         <p className={defaultPClass}><IoCheckmarkCircleSharp className={price < 13 ? "text-gray-400" : "text-blue-400"}/>Support more than <span className="font-bold">10+ languages</span></p>
         </div>
-        <button className={`bg-blue-400 rounded-md px-[12px] py-[2px] mt-[15%] max-lg:mt-[80px] cursor-pointer duration-400 ${currentTheme === "dark" ? "hover:bg-white hover:text-black" : "hover:bg-neutral-700 text-white"}`} onClick={paymentIntent(price)}>Subscribe</button>
+        <button className={`bg-blue-400 rounded-md px-[12px] py-[2px] mt-[15%] max-lg:mt-[80px] cursor-pointer duration-400 ${currentTheme === "dark" ? "hover:bg-white hover:text-black" : "hover:bg-neutral-700 text-white"}`} onClick={paymentIntent(Number(price))}>Subscribe</button>
     </div>
   )
 }
